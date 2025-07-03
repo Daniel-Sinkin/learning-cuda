@@ -1,0 +1,281 @@
+Building project...
+[ 33%] Building CUDA object CMakeFiles/ds.dir/main.cu.o
+[ 66%] Linking CUDA device code CMakeFiles/ds.dir/cmake_device_link.o
+[100%] Linking CUDA executable ds
+[100%] Built target ds
+Build completed in 7.114 seconds.
+Running ./ds...
+DGEMM Performance Test
+======================
+
+Testing matrix size: 32x32x32
+  [sync_once][Duration: 6230793 ns][Performance: 1.052 GFLOPS][Efficiency: 0.2%][Memory: 0.023 MB][DGEMM: (32x32) x (32x32) -> (32x32)][Iterations: 100]
+  [sync_every_iter][Duration: 7064300 ns][Performance: 0.928 GFLOPS][Efficiency: 0.2%][Memory: 0.023 MB][DGEMM: (32x32) x (32x32) -> (32x32)][Iterations: 100]
+  Synchronization overhead: 13.4%
+
+Testing matrix size: 64x64x64
+  [sync_once][Duration: 11578848 ns][Performance: 4.528 GFLOPS][Efficiency: 0.9%][Memory: 0.094 MB][DGEMM: (64x64) x (64x64) -> (64x64)][Iterations: 100]
+  [sync_every_iter][Duration: 12233192 ns][Performance: 4.286 GFLOPS][Efficiency: 0.9%][Memory: 0.094 MB][DGEMM: (64x64) x (64x64) -> (64x64)][Iterations: 100]
+  Synchronization overhead: 5.7%
+
+Testing matrix size: 96x96x96
+  [sync_once][Duration: 16706370 ns][Performance: 10.592 GFLOPS][Efficiency: 2.1%][Memory: 0.211 MB][DGEMM: (96x96) x (96x96) -> (96x96)][Iterations: 100]
+  [sync_every_iter][Duration: 17664918 ns][Performance: 10.017 GFLOPS][Efficiency: 2.0%][Memory: 0.211 MB][DGEMM: (96x96) x (96x96) -> (96x96)][Iterations: 100]
+  Synchronization overhead: 5.7%
+
+Testing matrix size: 128x128x128
+  [sync_once][Duration: 11935766 ns][Performance: 35.141 GFLOPS][Efficiency: 7.0%][Memory: 0.375 MB][DGEMM: (128x128) x (128x128) -> (128x128)][Iterations: 100]
+  [sync_every_iter][Duration: 12806503 ns][Performance: 32.751 GFLOPS][Efficiency: 6.6%][Memory: 0.375 MB][DGEMM: (128x128) x (128x128) -> (128x128)][Iterations: 100]
+  Synchronization overhead: 7.3%
+
+Testing matrix size: 256x256x256
+  [sync_once][Duration: 12295083 ns][Performance: 272.909 GFLOPS][Efficiency: 54.6%][Memory: 1.500 MB][DGEMM: (256x256) x (256x256) -> (256x256)][Iterations: 100]
+  [sync_every_iter][Duration: 11787663 ns][Performance: 284.657 GFLOPS][Efficiency: 56.9%][Memory: 1.500 MB][DGEMM: (256x256) x (256x256) -> (256x256)][Iterations: 100]
+  Synchronization overhead: -4.1%
+
+Testing matrix size: 512x512x512
+  [sync_once][Duration: 68908341 ns][Performance: 389.554 GFLOPS][Efficiency: 77.9%][Memory: 6.000 MB][DGEMM: (512x512) x (512x512) -> (512x512)][Iterations: 100]
+  [sync_every_iter][Duration: 68911631 ns][Performance: 389.536 GFLOPS][Efficiency: 77.9%][Memory: 6.000 MB][DGEMM: (512x512) x (512x512) -> (512x512)][Iterations: 100]
+  Synchronization overhead: 0.0%
+
+Testing larger matrices for peak performance:
+============================================
+
+Testing matrix size: 1024x1024x1024
+  [large_matrix][Duration: 52455127 ns][Performance: 409.394 GFLOPS][Efficiency: 81.9%][Memory: 24.000 MB][DGEMM: (1024x1024) x (1024x1024) -> (1024x1024)][Iterations: 10]
+
+Testing matrix size: 2048x2048x2048
+  [large_matrix][Duration: 385829331 ns][Performance: 445.271 GFLOPS][Efficiency: 89.1%][Memory: 96.000 MB][DGEMM: (2048x2048) x (2048x2048) -> (2048x2048)][Iterations: 10]
+
+Testing matrix size: 4096x4096x4096
+  [large_matrix][Duration: 2980554445 ns][Performance: 461.119 GFLOPS][Efficiency: 92.2%][Memory: 384.000 MB][DGEMM: (4096x4096) x (4096x4096) -> (4096x4096)][Iterations: 10]
+
+DGEMM Performance Test (CuMatrix)
+=================================
+
+Size 32 x 32
+  [sync_once][Duration: 4643642 ns][Performance: 1.411 GFLOPS][Efficiency: 0.3%][Memory: 0.023 MB][DGEMM: (32x32) x (32x32) -> (32x32)][Iterations: 100]
+  [sync_every_iter][Duration: 5446036 ns][Performance: 1.203 GFLOPS][Efficiency: 0.2%][Memory: 0.023 MB][DGEMM: (32x32) x (32x32) -> (32x32)][Iterations: 100]
+  sync overhead: 17.3%
+
+Size 64 x 64
+  [sync_once][Duration: 8683950 ns][Performance: 6.037 GFLOPS][Efficiency: 1.2%][Memory: 0.094 MB][DGEMM: (64x64) x (64x64) -> (64x64)][Iterations: 100]
+  [sync_every_iter][Duration: 9500136 ns][Performance: 5.519 GFLOPS][Efficiency: 1.1%][Memory: 0.094 MB][DGEMM: (64x64) x (64x64) -> (64x64)][Iterations: 100]
+  sync overhead: 9.4%
+
+Size 96 x 96
+  [sync_once][Duration: 12719930 ns][Performance: 13.911 GFLOPS][Efficiency: 2.8%][Memory: 0.211 MB][DGEMM: (96x96) x (96x96) -> (96x96)][Iterations: 100]
+  [sync_every_iter][Duration: 13529405 ns][Performance: 13.079 GFLOPS][Efficiency: 2.6%][Memory: 0.211 MB][DGEMM: (96x96) x (96x96) -> (96x96)][Iterations: 100]
+  sync overhead: 6.4%
+
+Size 128 x 128
+  [sync_once][Duration: 9067237 ns][Performance: 46.258 GFLOPS][Efficiency: 9.3%][Memory: 0.375 MB][DGEMM: (128x128) x (128x128) -> (128x128)][Iterations: 100]
+  [sync_every_iter][Duration: 9920175 ns][Performance: 42.281 GFLOPS][Efficiency: 8.5%][Memory: 0.375 MB][DGEMM: (128x128) x (128x128) -> (128x128)][Iterations: 100]
+  sync overhead: 9.4%
+
+Size 256 x 256
+  [sync_once][Duration: 9338023 ns][Performance: 359.331 GFLOPS][Efficiency: 71.9%][Memory: 1.500 MB][DGEMM: (256x256) x (256x256) -> (256x256)][Iterations: 100]
+  [sync_every_iter][Duration: 10192269 ns][Performance: 329.215 GFLOPS][Efficiency: 65.8%][Memory: 1.500 MB][DGEMM: (256x256) x (256x256) -> (256x256)][Iterations: 100]
+  sync overhead: 9.1%
+
+Size 512 x 512
+  [sync_once][Duration: 67641606 ns][Performance: 396.850 GFLOPS][Efficiency: 79.4%][Memory: 6.000 MB][DGEMM: (512x512) x (512x512) -> (512x512)][Iterations: 100]
+  [sync_every_iter][Duration: 68484172 ns][Performance: 391.967 GFLOPS][Efficiency: 78.4%][Memory: 6.000 MB][DGEMM: (512x512) x (512x512) -> (512x512)][Iterations: 100]
+  sync overhead: 1.2%
+
+Large matrices:
+--------------
+Size 1024 x 1024
+  [large][Duration: 52159032 ns][Performance: 411.718 GFLOPS][Efficiency: 82.3%][Memory: 24.000 MB][DGEMM: (1024x1024) x (1024x1024) -> (1024x1024)][Iterations: 10]
+
+Size 2048 x 2048
+  [large][Duration: 386043606 ns][Performance: 445.024 GFLOPS][Efficiency: 89.0%][Memory: 96.000 MB][DGEMM: (2048x2048) x (2048x2048) -> (2048x2048)][Iterations: 10]
+
+Size 4096 x 4096
+  [large][Duration: 2980962533 ns][Performance: 461.056 GFLOPS][Efficiency: 92.2%][Memory: 384.000 MB][DGEMM: (4096x4096) x (4096x4096) -> (4096x4096)][Iterations: 10]
+
+Batched DGEMM Performance Test
+==============================
+
+Batch size: 10
+-----------------
+  Matrix size: 32×32×32
+    [baseline_loop][Duration: 4682571 ns][Performance: 1.400 GFLOPS][Efficiency: 0.3%][Memory: 0.234 MB][Batch: 10 × DGEMM: (32×32) × (32×32) → (32×32)][Iterations: 10]
+    [cublas_batched][Duration: 524500 ns][Performance: 12.495 GFLOPS][Efficiency: 2.5%][Memory: 0.234 MB][Batch: 10 × DGEMM: (32×32) × (32×32) → (32×32)][Iterations: 10]
+    [strided_batched][Duration: 503070 ns][Performance: 13.027 GFLOPS][Efficiency: 2.6%][Memory: 0.234 MB][Batch: 10 × DGEMM: (32×32) × (32×32) → (32×32)][Iterations: 10]
+    Speedup (batched vs baseline): 8.93x
+    Speedup (strided vs baseline): 9.31x
+
+  Matrix size: 64×64×64
+    [baseline_loop][Duration: 8702131 ns][Performance: 6.025 GFLOPS][Efficiency: 1.2%][Memory: 0.938 MB][Batch: 10 × DGEMM: (64×64) × (64×64) → (64×64)][Iterations: 10]
+    [cublas_batched][Duration: 909698 ns][Performance: 57.633 GFLOPS][Efficiency: 11.5%][Memory: 0.938 MB][Batch: 10 × DGEMM: (64×64) × (64×64) → (64×64)][Iterations: 10]
+    [strided_batched][Duration: 894367 ns][Performance: 58.621 GFLOPS][Efficiency: 11.7%][Memory: 0.938 MB][Batch: 10 × DGEMM: (64×64) × (64×64) → (64×64)][Iterations: 10]
+    Speedup (batched vs baseline): 9.57x
+    Speedup (strided vs baseline): 9.73x
+
+  Matrix size: 128×128×128
+    [baseline_loop][Duration: 9174810 ns][Performance: 45.715 GFLOPS][Efficiency: 9.1%][Memory: 3.750 MB][Batch: 10 × DGEMM: (128×128) × (128×128) → (128×128)][Iterations: 10]
+    [cublas_batched][Duration: 1722214 ns][Performance: 243.541 GFLOPS][Efficiency: 48.7%][Memory: 3.750 MB][Batch: 10 × DGEMM: (128×128) × (128×128) → (128×128)][Iterations: 10]
+    [strided_batched][Duration: 1722524 ns][Performance: 243.498 GFLOPS][Efficiency: 48.7%][Memory: 3.750 MB][Batch: 10 × DGEMM: (128×128) × (128×128) → (128×128)][Iterations: 10]
+    Speedup (batched vs baseline): 5.33x
+    Speedup (strided vs baseline): 5.33x
+
+  Matrix size: 256×256×256
+    [baseline_loop][Duration: 9823363 ns][Performance: 341.578 GFLOPS][Efficiency: 68.3%][Memory: 15.000 MB][Batch: 10 × DGEMM: (256×256) × (256×256) → (256×256)][Iterations: 10]
+    [cublas_batched][Duration: 9916425 ns][Performance: 338.372 GFLOPS][Efficiency: 67.7%][Memory: 15.000 MB][Batch: 10 × DGEMM: (256×256) × (256×256) → (256×256)][Iterations: 10]
+    [strided_batched][Duration: 9913064 ns][Performance: 338.487 GFLOPS][Efficiency: 67.7%][Memory: 15.000 MB][Batch: 10 × DGEMM: (256×256) × (256×256) → (256×256)][Iterations: 10]
+    Speedup (batched vs baseline): 0.99x
+    Speedup (strided vs baseline): 0.99x
+
+
+Batch size: 50
+-----------------
+  Matrix size: 32×32×32
+    [baseline_loop][Duration: 23167884 ns][Performance: 1.414 GFLOPS][Efficiency: 0.3%][Memory: 1.172 MB][Batch: 50 × DGEMM: (32×32) × (32×32) → (32×32)][Iterations: 10]
+    [cublas_batched][Duration: 506739 ns][Performance: 64.664 GFLOPS][Efficiency: 12.9%][Memory: 1.172 MB][Batch: 50 × DGEMM: (32×32) × (32×32) → (32×32)][Iterations: 10]
+    [strided_batched][Duration: 488509 ns][Performance: 67.078 GFLOPS][Efficiency: 13.4%][Memory: 1.172 MB][Batch: 50 × DGEMM: (32×32) × (32×32) → (32×32)][Iterations: 10]
+    Speedup (batched vs baseline): 45.72x
+    Speedup (strided vs baseline): 47.43x
+
+  Matrix size: 64×64×64
+    [baseline_loop][Duration: 43489193 ns][Performance: 6.028 GFLOPS][Efficiency: 1.2%][Memory: 4.688 MB][Batch: 50 × DGEMM: (64×64) × (64×64) → (64×64)][Iterations: 10]
+    [cublas_batched][Duration: 918527 ns][Performance: 285.396 GFLOPS][Efficiency: 57.1%][Memory: 4.688 MB][Batch: 50 × DGEMM: (64×64) × (64×64) → (64×64)][Iterations: 10]
+    [strided_batched][Duration: 909447 ns][Performance: 288.245 GFLOPS][Efficiency: 57.6%][Memory: 4.688 MB][Batch: 50 × DGEMM: (64×64) × (64×64) → (64×64)][Iterations: 10]
+    Speedup (batched vs baseline): 47.35x
+    Speedup (strided vs baseline): 47.82x
+
+  Matrix size: 128×128×128
+    [baseline_loop][Duration: 46103134 ns][Performance: 45.488 GFLOPS][Efficiency: 9.1%][Memory: 18.750 MB][Batch: 50 × DGEMM: (128×128) × (128×128) → (128×128)][Iterations: 10]
+    [cublas_batched][Duration: 5059879 ns][Performance: 414.467 GFLOPS][Efficiency: 82.9%][Memory: 18.750 MB][Batch: 50 × DGEMM: (128×128) × (128×128) → (128×128)][Iterations: 10]
+    [strided_batched][Duration: 5051249 ns][Performance: 415.175 GFLOPS][Efficiency: 83.0%][Memory: 18.750 MB][Batch: 50 × DGEMM: (128×128) × (128×128) → (128×128)][Iterations: 10]
+    Speedup (batched vs baseline): 9.11x
+    Speedup (strided vs baseline): 9.13x
+
+  Matrix size: 256×256×256
+    [baseline_loop][Duration: 49107743 ns][Performance: 341.641 GFLOPS][Efficiency: 68.3%][Memory: 75.000 MB][Batch: 50 × DGEMM: (256×256) × (256×256) → (256×256)][Iterations: 10]
+    [cublas_batched][Duration: 38855402 ns][Performance: 431.786 GFLOPS][Efficiency: 86.4%][Memory: 75.000 MB][Batch: 50 × DGEMM: (256×256) × (256×256) → (256×256)][Iterations: 10]
+    [strided_batched][Duration: 38836811 ns][Performance: 431.993 GFLOPS][Efficiency: 86.4%][Memory: 75.000 MB][Batch: 50 × DGEMM: (256×256) × (256×256) → (256×256)][Iterations: 10]
+    Speedup (batched vs baseline): 1.26x
+    Speedup (strided vs baseline): 1.26x
+
+
+Batch size: 100
+-----------------
+  Matrix size: 32×32×32
+    [baseline_loop][Duration: 46338988 ns][Performance: 1.414 GFLOPS][Efficiency: 0.3%][Memory: 2.344 MB][Batch: 100 × DGEMM: (32×32) × (32×32) → (32×32)][Iterations: 10]
+    [cublas_batched][Duration: 934468 ns][Performance: 70.132 GFLOPS][Efficiency: 14.0%][Memory: 2.344 MB][Batch: 100 × DGEMM: (32×32) × (32×32) → (32×32)][Iterations: 10]
+    [strided_batched][Duration: 927698 ns][Performance: 70.644 GFLOPS][Efficiency: 14.1%][Memory: 2.344 MB][Batch: 100 × DGEMM: (32×32) × (32×32) → (32×32)][Iterations: 10]
+    Speedup (batched vs baseline): 49.59x
+    Speedup (strided vs baseline): 49.95x
+
+  Matrix size: 64×64×64
+    [baseline_loop][Duration: 87168398 ns][Performance: 6.015 GFLOPS][Efficiency: 1.2%][Memory: 9.375 MB][Batch: 100 × DGEMM: (64×64) × (64×64) → (64×64)][Iterations: 10]
+    [cublas_batched][Duration: 1766954 ns][Performance: 296.719 GFLOPS][Efficiency: 59.3%][Memory: 9.375 MB][Batch: 100 × DGEMM: (64×64) × (64×64) → (64×64)][Iterations: 10]
+    [strided_batched][Duration: 1776605 ns][Performance: 295.107 GFLOPS][Efficiency: 59.0%][Memory: 9.375 MB][Batch: 100 × DGEMM: (64×64) × (64×64) → (64×64)][Iterations: 10]
+    Speedup (batched vs baseline): 49.33x
+    Speedup (strided vs baseline): 49.06x
+
+  Matrix size: 128×128×128
+    [baseline_loop][Duration: 92263688 ns][Performance: 45.460 GFLOPS][Efficiency: 9.1%][Memory: 37.500 MB][Batch: 100 × DGEMM: (128×128) × (128×128) → (128×128)][Iterations: 10]
+    [cublas_batched][Duration: 10009336 ns][Performance: 419.039 GFLOPS][Efficiency: 83.8%][Memory: 37.500 MB][Batch: 100 × DGEMM: (128×128) × (128×128) → (128×128)][Iterations: 10]
+    [strided_batched][Duration: 10003936 ns][Performance: 419.265 GFLOPS][Efficiency: 83.9%][Memory: 37.500 MB][Batch: 100 × DGEMM: (128×128) × (128×128) → (128×128)][Iterations: 10]
+    Speedup (batched vs baseline): 9.22x
+    Speedup (strided vs baseline): 9.22x
+
+  Matrix size: 256×256×256
+    [baseline_loop][Duration: 98200204 ns][Performance: 341.694 GFLOPS][Efficiency: 68.3%][Memory: 150.000 MB][Batch: 100 × DGEMM: (256×256) × (256×256) → (256×256)][Iterations: 10]
+    [cublas_batched][Duration: 74391568 ns][Performance: 451.052 GFLOPS][Efficiency: 90.2%][Memory: 150.000 MB][Batch: 100 × DGEMM: (256×256) × (256×256) → (256×256)][Iterations: 10]
+    [strided_batched][Duration: 74373238 ns][Performance: 451.163 GFLOPS][Efficiency: 90.2%][Memory: 150.000 MB][Batch: 100 × DGEMM: (256×256) × (256×256) → (256×256)][Iterations: 10]
+    Speedup (batched vs baseline): 1.32x
+    Speedup (strided vs baseline): 1.32x
+
+
+Batch size: 500
+-----------------
+  Matrix size: 32×32×32
+    [baseline_loop][Duration: 232470356 ns][Performance: 1.410 GFLOPS][Efficiency: 0.3%][Memory: 11.719 MB][Batch: 500 × DGEMM: (32×32) × (32×32) → (32×32)][Iterations: 10]
+    [cublas_batched][Duration: 3074550 ns][Performance: 106.578 GFLOPS][Efficiency: 21.3%][Memory: 11.719 MB][Batch: 500 × DGEMM: (32×32) × (32×32) → (32×32)][Iterations: 10]
+    [strided_batched][Duration: 3068100 ns][Performance: 106.802 GFLOPS][Efficiency: 21.4%][Memory: 11.719 MB][Batch: 500 × DGEMM: (32×32) × (32×32) → (32×32)][Iterations: 10]
+    Speedup (batched vs baseline): 75.61x
+    Speedup (strided vs baseline): 75.77x
+
+  Matrix size: 64×64×64
+    [baseline_loop][Duration: 436079347 ns][Performance: 6.011 GFLOPS][Efficiency: 1.2%][Memory: 46.875 MB][Batch: 500 × DGEMM: (64×64) × (64×64) → (64×64)][Iterations: 10]
+    [cublas_batched][Duration: 5986537 ns][Performance: 437.889 GFLOPS][Efficiency: 87.6%][Memory: 46.875 MB][Batch: 500 × DGEMM: (64×64) × (64×64) → (64×64)][Iterations: 10]
+    [strided_batched][Duration: 5970097 ns][Performance: 439.095 GFLOPS][Efficiency: 87.8%][Memory: 46.875 MB][Batch: 500 × DGEMM: (64×64) × (64×64) → (64×64)][Iterations: 10]
+    Speedup (batched vs baseline): 72.84x
+    Speedup (strided vs baseline): 73.04x
+
+  Matrix size: 128×128×128
+    [baseline_loop][Duration: 461309851 ns][Performance: 45.461 GFLOPS][Efficiency: 9.1%][Memory: 187.500 MB][Batch: 500 × DGEMM: (128×128) × (128×128) → (128×128)][Iterations: 10]
+    [cublas_batched][Duration: 47210585 ns][Performance: 444.212 GFLOPS][Efficiency: 88.8%][Memory: 187.500 MB][Batch: 500 × DGEMM: (128×128) × (128×128) → (128×128)][Iterations: 10]
+    [strided_batched][Duration: 47195955 ns][Performance: 444.350 GFLOPS][Efficiency: 88.9%][Memory: 187.500 MB][Batch: 500 × DGEMM: (128×128) × (128×128) → (128×128)][Iterations: 10]
+    Speedup (batched vs baseline): 9.77x
+    Speedup (strided vs baseline): 9.77x
+
+  Matrix size: 256×256×256
+    [baseline_loop][Duration: 490862660 ns][Performance: 341.790 GFLOPS][Efficiency: 68.4%][Memory: 750.000 MB][Batch: 500 × DGEMM: (256×256) × (256×256) → (256×256)][Iterations: 10]
+    [cublas_batched][Duration: 361647218 ns][Performance: 463.911 GFLOPS][Efficiency: 92.8%][Memory: 750.000 MB][Batch: 500 × DGEMM: (256×256) × (256×256) → (256×256)][Iterations: 10]
+    [strided_batched][Duration: 361664718 ns][Performance: 463.889 GFLOPS][Efficiency: 92.8%][Memory: 750.000 MB][Batch: 500 × DGEMM: (256×256) × (256×256) → (256×256)][Iterations: 10]
+    Speedup (batched vs baseline): 1.36x
+    Speedup (strided vs baseline): 1.36x
+
+
+Batch size: 1000
+-----------------
+  Matrix size: 32×32×32
+    [baseline_loop][Duration: 465031834 ns][Performance: 1.409 GFLOPS][Efficiency: 0.3%][Memory: 23.438 MB][Batch: 1000 × DGEMM: (32×32) × (32×32) → (32×32)][Iterations: 10]
+    [cublas_batched][Duration: 6055539 ns][Performance: 108.225 GFLOPS][Efficiency: 21.6%][Memory: 23.438 MB][Batch: 1000 × DGEMM: (32×32) × (32×32) → (32×32)][Iterations: 10]
+    [strided_batched][Duration: 6032488 ns][Performance: 108.638 GFLOPS][Efficiency: 21.7%][Memory: 23.438 MB][Batch: 1000 × DGEMM: (32×32) × (32×32) → (32×32)][Iterations: 10]
+    Speedup (batched vs baseline): 76.79x
+    Speedup (strided vs baseline): 77.09x
+
+  Matrix size: 64×64×64
+    [baseline_loop][Duration: 871770636 ns][Performance: 6.014 GFLOPS][Efficiency: 1.2%][Memory: 93.750 MB][Batch: 1000 × DGEMM: (64×64) × (64×64) → (64×64)][Iterations: 10]
+    [cublas_batched][Duration: 11819162 ns][Performance: 443.592 GFLOPS][Efficiency: 88.7%][Memory: 93.750 MB][Batch: 1000 × DGEMM: (64×64) × (64×64) → (64×64)][Iterations: 10]
+    [strided_batched][Duration: 11801881 ns][Performance: 444.241 GFLOPS][Efficiency: 88.8%][Memory: 93.750 MB][Batch: 1000 × DGEMM: (64×64) × (64×64) → (64×64)][Iterations: 10]
+    Speedup (batched vs baseline): 73.76x
+    Speedup (strided vs baseline): 73.87x
+
+  Matrix size: 128×128×128
+    [baseline_loop][Duration: 922859767 ns][Performance: 45.449 GFLOPS][Efficiency: 9.1%][Memory: 375.000 MB][Batch: 1000 × DGEMM: (128×128) × (128×128) → (128×128)][Iterations: 10]
+    [cublas_batched][Duration: 91026414 ns][Performance: 460.779 GFLOPS][Efficiency: 92.2%][Memory: 375.000 MB][Batch: 1000 × DGEMM: (128×128) × (128×128) → (128×128)][Iterations: 10]
+    [strided_batched][Duration: 91018424 ns][Performance: 460.819 GFLOPS][Efficiency: 92.2%][Memory: 375.000 MB][Batch: 1000 × DGEMM: (128×128) × (128×128) → (128×128)][Iterations: 10]
+    Speedup (batched vs baseline): 10.14x
+    Speedup (strided vs baseline): 10.14x
+
+  Matrix size: 256×256×256
+    [baseline_loop][Duration: 982827082 ns][Performance: 341.407 GFLOPS][Efficiency: 68.3%][Memory: 1500.000 MB][Batch: 1000 × DGEMM: (256×256) × (256×256) → (256×256)][Iterations: 10]
+    [cublas_batched][Duration: 723169333 ns][Performance: 463.991 GFLOPS][Efficiency: 92.8%][Memory: 1500.000 MB][Batch: 1000 × DGEMM: (256×256) × (256×256) → (256×256)][Iterations: 10]
+    [strided_batched][Duration: 723199384 ns][Performance: 463.972 GFLOPS][Efficiency: 92.8%][Memory: 1500.000 MB][Batch: 1000 × DGEMM: (256×256) × (256×256) → (256×256)][Iterations: 10]
+    Speedup (batched vs baseline): 1.36x
+    Speedup (strided vs baseline): 1.36x
+
+
+Testing larger matrices with smaller batches:
+============================================
+
+Batch: 1, Matrix: 512×512
+  [large_strided][Duration: 3572780 ns][Performance: 375.667 GFLOPS][Efficiency: 75.1%][Memory: 6.000 MB][Batch: 1 × DGEMM: (512×512) × (512×512) → (512×512)][Iterations: 5]
+
+Batch: 1, Matrix: 1024×1024
+  [large_strided][Duration: 26806475 ns][Performance: 400.553 GFLOPS][Efficiency: 80.1%][Memory: 24.000 MB][Batch: 1 × DGEMM: (1024×1024) × (1024×1024) → (1024×1024)][Iterations: 5]
+
+Batch: 5, Matrix: 512×512
+  [large_strided][Duration: 17052614 ns][Performance: 393.540 GFLOPS][Efficiency: 78.7%][Memory: 30.000 MB][Batch: 5 × DGEMM: (512×512) × (512×512) → (512×512)][Iterations: 5]
+
+Batch: 5, Matrix: 1024×1024
+  [large_strided][Duration: 121003291 ns][Performance: 443.683 GFLOPS][Efficiency: 88.7%][Memory: 120.000 MB][Batch: 5 × DGEMM: (1024×1024) × (1024×1024) → (1024×1024)][Iterations: 5]
+
+Batch: 10, Matrix: 512×512
+  [large_strided][Duration: 31171801 ns][Performance: 430.574 GFLOPS][Efficiency: 86.1%][Memory: 60.000 MB][Batch: 10 × DGEMM: (512×512) × (512×512) → (512×512)][Iterations: 5]
+
+Batch: 10, Matrix: 1024×1024
+  [large_strided][Duration: 245136404 ns][Performance: 438.018 GFLOPS][Efficiency: 87.6%][Memory: 240.000 MB][Batch: 10 × DGEMM: (1024×1024) × (1024×1024) → (1024×1024)][Iterations: 5]
+
+Batch: 20, Matrix: 512×512
+  [large_strided][Duration: 62396053 ns][Performance: 430.212 GFLOPS][Efficiency: 86.0%][Memory: 120.000 MB][Batch: 20 × DGEMM: (512×512) × (512×512) → (512×512)][Iterations: 5]
+
+Batch: 20, Matrix: 1024×1024
+  [large_strided][Duration: 479221412 ns][Performance: 448.119 GFLOPS][Efficiency: 89.6%][Memory: 480.000 MB][Batch: 20 × DGEMM: (1024×1024) × (1024×1024) → (1024×1024)][Iterations: 5]
+
