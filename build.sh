@@ -29,7 +29,6 @@ echo "Detected GPU: $GPU_NAME"
 echo "Using CUDA architecture: $ARCH"
 echo ""
 
-# Clean and build
 rm -rf build
 mkdir build
 cd build
